@@ -1,0 +1,31 @@
+strong {
+    color: #FF5722; /* This is the hex code for deep orange */
+}
+
+.md-header {
+    background: #FF5722;
+}
+
+.md-tabs__link {
+  color: white !important;
+}
+
+.md-tabs__link:hover {
+  color: #FF5722 !important;
+}
+
+body a:link { /* unvisited links */
+    color: #3F51B5;
+}
+
+body a:visited { /* visited links */
+    color: #3F51B5;
+}
+
+body a:hover { /* mouse over links */
+    color: #3F51B5;
+}
+
+body a:active { /* selected links */
+    color: #3F51B5;
+}
