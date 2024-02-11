@@ -16,10 +16,9 @@ theme:
     - content.code.copy
   language: en
   palette:
-    - scheme: default
+      scheme: slate
       primary: indigo
-      accent: deep orange 
-    - scheme: slate
+      accent: deep orange
 
 plugins:
   - social
