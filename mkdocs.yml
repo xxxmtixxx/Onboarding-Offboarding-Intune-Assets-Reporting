@@ -16,9 +16,18 @@ theme:
     - content.code.copy
   language: en
   palette:
-      scheme: slate
-      primary: indigo
-      accent: deep orange
+  - scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline 
+      name: Switch to dark mode
+    primary: indigo
+    accent: deep orange 
+  - scheme: slate 
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode    
+    primary: indigo
+    accent: deep orange
 
 plugins:
   - social
