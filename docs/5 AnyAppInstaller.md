@@ -1,8 +1,10 @@
 # **AnyAppInstaller**
 
+## **Click here to download [AnyAppInstaller](https://github.com/xxxmtixxx/AnyAppInstaller)**.
+
 - AnyAppInstaller is a PowerShell script designed to streamline the process of downloading and installing software from a specified URL or server file path. The script supports a variety of file types, including `EXE`, `MSI`, `MSIX`, and `ZIP` files.
 
-- The sequence of operations begins with URL verification. If the URL points to a SharePoint location, the script appends "download=1" to ensure successful downloading. Following this, the script fetches the file name from the URL, preparing the local and server file paths.
+- The sequence of operations begins with URL verification. If the URL points to a SharePoint location, the script appends `download=1` to ensure successful downloading. Following this, the script fetches the file name from the URL, preparing the local and server file paths.
 - User Account Control (UAC) settings are then inspected and temporarily disabled to avoid installation prompts. The script also ensures the presence of a local temporary folder for the download.
 - The script checks the availability of the file on the server. If found, it copies the file from the server to the local machine. Otherwise, the file is downloaded from the web.
 - Upon successful download, the script identifies the file type and employs the relevant method for installation. For ZIP files, it extracts the contents and identifies the file type of the nested installer to determine the installation procedure.

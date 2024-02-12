@@ -3,6 +3,29 @@
 ## **Preparation**
 
 ### **If On-Prem:**
+
+**Onboarding Server Setup.ps1** is a PowerShell script designed to automate the initial configuration of an Active Directory environment for new user onboarding. It performs a variety of tasks to ensure that the necessary infrastructure and accounts are in place for a smooth onboarding process.
+    
+    - Active Directory Integration: Imports the Active Directory module to facilitate AD-related operations.
+    - File Path Management: Defines paths for source scripts, XML configurations, and log files, ensuring proper organization.
+    - Logging: Initiates transcript logging to capture all console output, providing a detailed record for review.
+    - Domain Information Retrieval: Gathers essential domain details like domain name and distinguished name for accurate scripting context.
+    - Service Accounts Management: Checks for a "Service Accounts" OU, creates it if missing, and manages the service account used for onboarding.
+    - Scheduled Task Configuration: Loads and modifies an XML file for a scheduled task with the current user's details and ensures its creation with the correct service account credentials.
+    - Infrastructure Setup: Establishes a structured directory path for scripts and logs, creating necessary folders if they do not exist.
+    - On-Premises Data Gateway: Includes functions to verify the installation of the On-Premises Data Gateway and to download and install it if needed.
+    - Error Handling: Employs a try-catch block to manage exceptions and a finally block to ensure the transcript is properly stopped.
+
+**CreateUsersFromCSV.ps1** is a PowerShell script that automates the creation of Active Directory users from a CSV file. It streamlines the process of setting up new users by handling various tasks in a systematic manner.
+
+    - Module Import and Environment Setup: Imports necessary modules and configures the environment with domain details and file paths.
+    - User Creation and Profile Setup: Processes user data from CSV files to create new AD users, generates passwords, and sets up their profiles.
+    - Group Assignment: Assigns users to appropriate security groups based on their roles and requirements.
+    - Home Directory Configuration: Manages home directories and permissions, ensuring users have access to their personal storage space.
+    - Logging and Output: Logs actions taken during the process and generates output files with user credentials and group memberships.
+    - Post-Processing Cleanup: Moves processed CSV files to a 'Completed' directory to maintain organization.
+    - Azure AD Integration: Initiates a delta sync with Azure AD Connect to update Azure AD with the changes made in the local AD environment.
+
 - **Initiate** the `Prepare Onboarding/Offboarding Data Gateway` script in `Datto` against a `secondary DC`.
     - Script will:
         - Copy all files into `C:\OnboardingScript`
@@ -64,7 +87,20 @@
 - **Go** to the `Onboarding Form list` in `SharePoint`.
 - **Update** the dropdown selections to match the `Security Group Descriptions`.
 - **Customize** SharePoint View: `All items > Format Current View > Advanced`
-- **Paste** contents from: `C:\Onboarding-Offboarding Project\Instructions\SharePoint View Format.txt` (Need to add this to the above script.)
+- **Paste** below code: (Need to add this to the above script.)
+```
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "commandBarProps": {
+    "commands": [
+      {
+        "key": "new",
+        "text": "Start Onboarding Request"
+      }
+    ]
+  }
+}
+```
 - **Verify** `Settings > List Settings > Title` is set to Not Required. (Need to add this to the above script.)
 
 ---

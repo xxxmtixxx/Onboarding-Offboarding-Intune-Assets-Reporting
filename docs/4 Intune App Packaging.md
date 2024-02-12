@@ -55,13 +55,13 @@ After you create the installer scripts, be sure to add the details to the `Requi
 
 **Description**: The `applications.csv` file is a comprehensive list that aids in the management, deployment, and uninstallation of software applications within the environment. Below is a detailed description of each column in the file:
 
-- **DisplayName**: The name of the application as it should appear in lists or any user-facing interface.
-- **Description**: A brief overview of the application, providing users or administrators with insights into its purpose or functionality. Typically set to DisplayName.
-- **Publisher**: The name of the company or individual that published or developed the application.
-- **InstallExperience**: Specifies the context in which the application should be installed (e.g., system or user rights).
-- **SetupFile**: The name of the PowerShell script used to install the application.
-- **UninstallCommandLine**: The command line instruction to uninstall the application. It may include specific uninstaller executables or use package managers like Chocolatey (choco) for certain applications. For some applications where uninstall commands are not applicable, this is marked as "N/A" (not applicable).
-- **SecurityGroupName**: Identifies the security group in Active Directory or another directory service that is granted access to the application. This is critical for managing application deployments based on security groups.
+    - DisplayName: The name of the application as it should appear in lists or any user-facing interface.
+    - Description: A brief overview of the application, providing users or administrators with insights into its purpose or functionality. Typically set to DisplayName.
+    - Publisher: The name of the company or individual that published or developed the application.
+    - InstallExperience: Specifies the context in which the application should be installed (e.g., system or user rights).
+    - SetupFile: The name of the PowerShell script used to install the application.
+    - UninstallCommandLine: The command line instruction to uninstall the application. It may include specific uninstaller executables or use package managers like Chocolatey (choco) for certain applications. For some applications where uninstall commands are not applicable, this is marked as "N/A" (not applicable).
+    - SecurityGroupName: Identifies the security group in Active Directory or another directory service that is granted access to the application. This is critical for managing application deployments based on security groups.
 
 ---
 
@@ -69,11 +69,11 @@ After you create the installer scripts, be sure to add the details to the `Requi
 
 **Description**: The `credentials.csv` file stores the necessary authentication and configuration details for accessing our cloud services and applications securely. Below, you'll find explanations for each column in the file:
 
-- **TenantID**: The unique identifier for the tenant in the cloud service platform. This ID is crucial for directing authentication requests to the correct tenant environment.
-- **Domain**: The primary (*.onmicrosoft.com) domain associated with the tenant.
-- **CertificateThumbprint**: Used for secure authentication, the thumbprint corresponds to a specific certificate generated in Entra.
-- **ClientID**: The identifier for the client application that is registered within the tenant. This ID is used to authenticate the application when it requests access to resources.
-- **TenantName**: A human-readable name for the tenant, making it easier for administrators and users to identify the correct environment within documentation or when managing multiple tenants.
+    - TenantID: The unique identifier for the tenant in the cloud service platform. This ID is crucial for directing authentication requests to the correct tenant environment.
+    - Domain: The primary (*.onmicrosoft.com) domain associated with the tenant.
+    - CertificateThumbprint: Used for secure authentication, the thumbprint corresponds to a specific certificate generated in Entra.
+    - ClientID: The identifier for the client application that is registered within the tenant. This ID is used to authenticate the application when it requests access to resources.
+    - TenantName: A human-readable name for the tenant, making it easier for administrators and users to identify the correct environment within documentation or when managing multiple tenants.
 
 ## **Security and Confidentiality**
 Given the sensitive nature of the information contained in the `credentials.csv file`, it's vital to ensure that this document is stored securely and is only accessible to authorized personnel. Mishandling of this information can lead to unauthorized access to our systems and data breaches.

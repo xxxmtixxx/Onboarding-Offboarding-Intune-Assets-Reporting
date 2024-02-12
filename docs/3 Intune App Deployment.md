@@ -23,16 +23,14 @@ After installation, close and reopen Windows PowerShell ISE.
 **Description:**
 This PowerShell script is designed to facilitate the management of Microsoft Intune applications across multiple tenants. It automates tasks such as the addition of new tenants, executing operations on existing tenants, and handling application installations. The script features a user-friendly interface to guide administrators through various options, including adding a new tenant, running actions on a specific tenant, or applying operations across all tenants.
 
-Key functionalities include:
-
-- Initialization of variables and preparation of the environment, including defining paths for storing applications and credentials.
-- Installation of necessary PowerShell modules for Azure AD, Microsoft Graph, and Intune application management.
-- Dynamic downloading and importing of a custom module for Intune Win32 application management across multiple tenants.
-- A user interaction section to capture the administrator's intent, whether it's to add a new tenant, operate on an existing one, or execute actions across all tenants.
-- For new tenants, the script supports the creation of an Azure AD application, generating a self-signed certificate, and configuring necessary permissions through Microsoft Graph for comprehensive application management.
-- For existing tenants, it enables the selection of a specific tenant or all tenants and processes applications based on pre-defined criteria in CSV files.
-- Comprehensive error handling and validation checks to ensure smooth script execution and user decisions.
-- Final report generation that summarizes the operations performed and their outcomes.
+	- Initialization of variables and preparation of the environment, including defining paths for storing applications and credentials.
+	- Installation of necessary PowerShell modules for Azure AD, Microsoft Graph, and Intune application management.
+	- Dynamic downloading and importing of a custom module for Intune Win32 application management across multiple tenants.
+	- A user interaction section to capture the administrator's intent, whether it's to add a new tenant, operate on an existing one, or execute actions across all tenants.
+	- For new tenants, the script supports the creation of an Azure AD application, generating a self-signed certificate, and configuring necessary permissions through Microsoft Graph for comprehensive application management.
+	- For existing tenants, it enables the selection of a specific tenant or all tenants and processes applications based on pre-defined criteria in CSV files.
+	- Comprehensive error handling and validation checks to ensure smooth script execution and user decisions.
+	- Final report generation that summarizes the operations performed and their outcomes.
 
 ---
 
@@ -41,14 +39,12 @@ Key functionalities include:
 **Description:**
 This PowerShell script is crafted to streamline the management of Win32 applications within Microsoft Intune across multiple tenants. It's specifically designed to handle the removal of applications, in addition to facilitating the addition of new tenants and the management of existing ones. Through a user-friendly command-line interface, the script provides administrators with options to add a new tenant, work with a specified existing tenant, or apply actions across all tenants, focusing on application removal.
 
-Key functionalities include:
-
-- Configuration of essential paths and the importation of necessary PowerShell modules for interacting with Azure AD, Microsoft Graph Authentication, and Intune application management capabilities.
-- A streamlined process for adding new tenants that includes creating an Azure AD application, generating a self-signed certificate, and configuring required permissions via Microsoft Graph to enable comprehensive application management within the new tenant.
-- An interactive user interface that guides administrators through selecting a tenant and choosing applications for removal, based on listings in a CSV file. This ensures that application portfolios can be accurately managed and updated across multiple tenants.
-- Enhanced security measures, including certificate-based authentication for Azure AD, to ensure secure access and management operations.
-- Detailed procedures for removing specified Win32 applications from the selected tenant(s), leveraging the script’s ability to authenticate and execute removal commands securely.
-- Final report generation that summarizes the operations performed and their outcomes.
+	- Configuration of essential paths and the importation of necessary PowerShell modules for interacting with Azure AD, Microsoft Graph Authentication, and Intune application management capabilities.
+	- A streamlined process for adding new tenants that includes creating an Azure AD application, generating a self-signed certificate, and configuring required permissions via Microsoft Graph to enable comprehensive application management within the new tenant.
+	- An interactive user interface that guides administrators through selecting a tenant and choosing applications for removal, based on listings in a CSV file. This ensures that application portfolios can be accurately managed and updated across multiple tenants.
+	- Enhanced security measures, including certificate-based authentication for Azure AD, to ensure secure access and management operations.
+	- Detailed procedures for removing specified Win32 applications from the selected tenant(s), leveraging the script’s ability to authenticate and execute removal commands securely.
+	- Final report generation that summarizes the operations performed and their outcomes.
 
 ---
 
