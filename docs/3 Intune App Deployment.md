@@ -2,11 +2,13 @@
 
 ## **API Download/Install**
 
-The module can be installed by unzipping the master zip into one of your powershell modules folder, or by running the following one-liner:
+The module can be installed by running the following one-liner:
 
 ```powershell
 $documentsPath=[Environment]::GetFolderPath('MyDocuments');$url='https://github.com/xxxmtixxx/IntuneWin32App-MultiTenant/archive/refs/heads/main.zip';$moduleName='IntuneWin32App-MultiTenant';$modulePath=Join-Path $documentsPath 'WindowsPowerShell\Modules';$tempPath=Join-Path $env:TEMP ($moduleName+'.zip');Invoke-WebRequest -Uri $url -OutFile $tempPath;$tempDir='.'+$moduleName+'_temp';$extractPath=Join-Path $HOME $tempDir;Expand-Archive -Path $tempPath -DestinationPath $extractPath -Force;$sourceFolder=Join-Path $extractPath 'IntuneWin32App-MultiTenant-main';$destinationFolder=Join-Path $modulePath $moduleName;$managerFolder=Join-Path $extractPath ('IntuneWin32App-MultiTenant-main\IntuneMultiTenantManager');$targetManagerFolder='C:\IntuneMultiTenantManager';if (!(Test-Path $destinationFolder)) {New-Item -Path $destinationFolder -ItemType Directory | Out-Null};Copy-Item -Path "$sourceFolder\*" -Destination $destinationFolder -Recurse -Force;if (!(Test-Path $targetManagerFolder)) {New-Item -Path $targetManagerFolder -ItemType Directory | Out-Null};Copy-Item -Path "$managerFolder\*" -Destination $targetManagerFolder -Recurse -Force
 ```
+
+The control files will be extracted to `C:\IntuneMultiTenantManager`.
 
 ---
 
@@ -16,7 +18,7 @@ After installation, close and reopen Windows PowerShell ISE.
 
 ---
 
-## **Command**: `Add-IntuneMultiTenant`
+## **Script**: `C:\IntuneMultiTenantManager\Add-IntuneMultiTenant.ps1`
 
 **Description:**
 This PowerShell script is designed to facilitate the management of Microsoft Intune applications across multiple tenants. It automates tasks such as the addition of new tenants, executing operations on existing tenants, and handling application installations. The script features a user-friendly interface to guide administrators through various options, including adding a new tenant, running actions on a specific tenant, or applying operations across all tenants.
@@ -34,7 +36,7 @@ Key functionalities include:
 
 ---
 
-## **Command**: `Remove-IntuneMultiTenant`
+## **Script**: `C:\IntuneMultiTenantManager\Remove-IntuneMultiTenant.ps1`
 
 **Description:**
 This PowerShell script is crafted to streamline the management of Win32 applications within Microsoft Intune across multiple tenants. It's specifically designed to handle the removal of applications, in addition to facilitating the addition of new tenants and the management of existing ones. Through a user-friendly command-line interface, the script provides administrators with options to add a new tenant, work with a specified existing tenant, or apply actions across all tenants, focusing on application removal.
@@ -54,14 +56,19 @@ Key functionalities include:
 
 ---
 
-## **Roadmap**:
-
-## **Command**: `Create-SecurityGroupsCloud`
+## **Script**: `C:\IntuneMultiTenantManager\Create-SecurityGroupsCloud.ps1`
 
 **Description:**
-This script is currently under development, but will allow for the creation of `Security Groups` in the `Cloud`. 
+This script will allow for the creation of `Security Groups` in the `Cloud` with the Security Group Name and Descriptions found in `Requirements\applications.csv`. 
 
-## **Command**: `Create-SecurityGroupsOnPrem`
+---
+
+## **Script**: `C:\IntuneMultiTenantManager\Generate-SecurityGroupsOnPrem.ps1`
 
 **Description:**
-This script is currently under development, but will allow for the createion of `Security Groups` in the `On-Prem` environment. Will be included with `Prepare Onboarding/Offboarding Data Gateway` script and `Datto`.
+This script will generate `Create-SecurityGroupsOnPrem.ps1` with the Security Group Name and Descriptions found in `Requirements\applications.csv`.
+
+## **Script**: `C:\IntuneMultiTenantManager\Create-SecurityGroupsOnPrem.ps1`
+
+**Description:**
+This script will allow for the createion of `Security Groups` in the `On-Prem` environment after being generated with `Generate-SecurityGroupsOnPrem.ps1`.

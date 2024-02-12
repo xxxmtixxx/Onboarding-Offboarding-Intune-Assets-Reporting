@@ -2,6 +2,8 @@
 
 The first time you run `Add-IntuneMultiTenant` or `Remove-IntuneMultiTenant`, "`C:\IntuneMultiTenantManager\Win32Apps`" will be created to store the Intune Packages.
 
+After you create the installer scripts, be sure to add the details to the `Requirements\applications.csv` file.
+
 ---
 
 ## **Path**: `C:\IntuneMultiTenantManager\Win32Apps`
