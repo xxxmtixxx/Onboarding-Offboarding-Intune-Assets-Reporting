@@ -2,7 +2,7 @@
 
 The first time you run `Add-IntuneMultiTenant` or `Remove-IntuneMultiTenant`, "`C:\IntuneMultiTenantManager\Win32Apps`" will be created to store the Intune Packages.
 
-After you create the installer scripts, be sure to add the details to the `Requirements\applications.csv` file.
+After you create the installer scripts, be sure to add the details to the `Requirements\applications.csv` file. See image below in file details.
 
 ---
 
@@ -62,6 +62,9 @@ After you create the installer scripts, be sure to add the details to the `Requi
     - SetupFile: The name of the PowerShell script used to install the application.
     - UninstallCommandLine: The command line instruction to uninstall the application. It may include specific uninstaller executables or use package managers like Chocolatey (choco) for certain applications. For some applications where uninstall commands are not applicable, this is marked as "N/A" (not applicable).
     - SecurityGroupName: Identifies the security group in Active Directory or another directory service that is granted access to the application. This is critical for managing application deployments based on security groups.
+    -SecurityGroupNameDescription: This field provides a brief explanation or description of the security group. This will also be set in the field of the onboarding form so it can compare and retrieve the security group names.
+
+![alt text](assets/Intune_App_Package_1.png?raw=true)
 
 ---
 
@@ -74,6 +77,8 @@ After you create the installer scripts, be sure to add the details to the `Requi
     - CertificateThumbprint: Used for secure authentication, the thumbprint corresponds to a specific certificate generated in Entra.
     - ClientID: The identifier for the client application that is registered within the tenant. This ID is used to authenticate the application when it requests access to resources.
     - TenantName: A human-readable name for the tenant, making it easier for administrators and users to identify the correct environment within documentation or when managing multiple tenants.
+
+![alt text](assets/Intune_App_Package_2.png?raw=true)
 
 ## **Security and Confidentiality**
 Given the sensitive nature of the information contained in the `credentials.csv file`, it's vital to ensure that this document is stored securely and is only accessible to authorized personnel. Mishandling of this information can lead to unauthorized access to our systems and data breaches.

@@ -4,6 +4,17 @@
 
 ### **If On-Prem:**
 
+#### **Download/Install**:
+
+- Open Windows PowerShell ISE as Admin on the server running Entra Connect.
+- To prepare the server component that will handle the user creation, run the following one-liner:
+
+```powershell
+$url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/main.zip';$moduleName='OnboardingOffboardingForm';$tempPath=Join-Path $env:TEMP ($moduleName+'.zip');Invoke-WebRequest -Uri $url -OutFile $tempPath;$tempDir='.'+$moduleName+'_temp';$extractPath=Join-Path $HOME $tempDir;Expand-Archive -Path $tempPath -DestinationPath $extractPath -Force;$rootFiles=Get-ChildItem -Path (Join-Path $extractPath 'OnboardingOffboardingForm-main') -Filter *.ps1 | Where-Object { $_.Name -ne 'CloudOnlySetup.ps1' };$onboardingFolder=Join-Path $extractPath ('OnboardingOffboardingForm-main\OnboardingScripts\*');$targetOnboardingFolder='C:\OnboardingScripts';if (!(Test-Path $targetOnboardingFolder)) {New-Item -Path $targetOnboardingFolder -ItemType Directory | Out-Null};$rootFiles | Copy-Item -Destination $targetOnboardingFolder;Copy-Item -Path $onboardingFolder -Destination $targetOnboardingFolder -Recurse -Force;Remove-Item -Path $extractPath -Recurse -Force
+```
+
+- The script extract everything to `C:\OnboardingScript`.
+
 **Onboarding Server Setup.ps1** is a PowerShell script designed to automate the initial configuration of an Active Directory environment for new user onboarding. It performs a variety of tasks to ensure that the necessary infrastructure and accounts are in place for a smooth onboarding process.
     
     - Active Directory Integration: Imports the Active Directory module to facilitate AD-related operations.
@@ -26,13 +37,13 @@
     - Post-Processing Cleanup: Moves processed CSV files to a 'Completed' directory to maintain organization.
     - Azure AD Integration: Initiates a delta sync with Azure AD Connect to update Azure AD with the changes made in the local AD environment.
 
-- **Initiate** the `Prepare Onboarding/Offboarding Data Gateway` script in `Datto` against a `secondary DC`.
-    - Script will:
-        - Copy all files into `C:\OnboardingScript`
-- **Remote** into the machine.
+**CreateUsersScheduledTask.xml** is a scheduled task which will be modified and created during the `Onboarding Server Setup.ps1` process.
+
+#### **Prepare/Run On-Prem Scripts and Configure Environment**:
+
 - **Customize** `CreateUserFromCSV.ps1` with client details.
     - `$externalDomain`: Specify the external domain name.
-        - Ex: `'google.com'`
+        - Ex: `'yourdomain.com'`
     - `$homeDrive`: Specify Home Drive Letter.
         - Ex: `'U:'`
     - `$homeDirectory`: Specify the shared Home Drive path.
@@ -47,10 +58,10 @@
         - Ex: `'C:\OnboardingScripts\Onboarding Complete'`
     - `$logPath`: Specify the log path.
         - Ex: `'C:\OnboardingScripts\Logs'`
-- **Convert** `CreateUserFromCSV.ps1` to `EXE`.
-- **Backup** `CreateUserFromCSV.ps1` to SharePoint and **delete** it from the `server`. (Need to add this to the below script.)
 - **Execute**: `C:\OnboardingScripts\Onboarding Server Setup.ps1`. Script will:
-    - Create the sa.onboarding service account.
+    - Create the 'Security Group Sync' OU if it doesn't exist.
+    - Create the 'Service Account OU' if it doesn't exist.
+    - Create the 'sa.onboarding' service account.
     - Create the Scheduled Task.
     - Download/install the On-Prem Data Gateway.
     - Sync Entra Connect.
@@ -61,9 +72,20 @@
 - **Create** `Inbox > Onboarding` folder in the mailbox.
 - **Configure** the `Data Gateway` with service account.
 
-
 ### **If Cloud Only:**
-- **Execute**: `C:\Onboarding-Offboarding Project\Cloud Only Setup.ps1`.
+
+#### **Download/Install**:
+
+- Open Windows PowerShell ISE as Admin on any machine you'd like.
+- To prepare the cloud, run the following one-liner to download the `Cloud Only Setup` and `SharePoint Migration` scripts migration scripts:
+
+```powershell
+$url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/main.zip';$moduleName='OnboardingOffboardingForm';$tempPath=Join-Path $env:TEMP ($moduleName+'.zip');Invoke-WebRequest -Uri $url -OutFile $tempPath;$tempDir='.'+$moduleName+'_temp';$extractPath=Join-Path $HOME $tempDir;Expand-Archive -Path $tempPath -DestinationPath $extractPath -Force;$rootFiles=Get-ChildItem -Path (Join-Path $extractPath 'OnboardingOffboardingForm-main') -Filter *.ps1;$targetOnboardingFolder='C:\OnboardingScripts';if (!(Test-Path $targetOnboardingFolder)) {New-Item -Path $targetOnboardingFolder -ItemType Directory | Out-Null};$rootFiles | Copy-Item -Destination $targetOnboardingFolder;Remove-Item -Path $extractPath -Recurse -Force
+```
+
+#### **Run Cloud Only Scripts and Configure Environment**
+
+- **Execute**: `C:\OnboardingScripts\CloudOnlySetup.ps1`.
     - Script will:
         - Create the `sa.onboarding` service account.
 - **Assign** `sa.onboarding` required licenses: (I need to verify this.)
@@ -75,7 +97,7 @@
 ---
 
 ## **SharePoint Site and Lists Creation**
-- **Execute**: `C:\Onboarding-Offboarding Project\Create SharePoint Site and Lists.ps1`.
+- **Execute**: `C:\OnboardingScripts\SharePoint Migration`.
 - **Login** as the `service account` for source and destination tenants.
     - Script will:
         - Connect to source and destination tenants
