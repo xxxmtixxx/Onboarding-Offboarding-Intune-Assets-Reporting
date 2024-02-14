@@ -26,3 +26,9 @@ Deploying applications through Microsoft Intune can streamline the setup of new 
 Before deploying, applications need to be correctly packaged. This Intune App Packaging guide outlines the steps to prepare your applications for deployment, ensuring compatibility and ease of installation:
 
 - [Intune App Packaging](4 Intune App Packaging): Learn the best practices for packaging your applications, making them ready for deployment with Intune.
+
+### **AnyAppInstaller**:
+
+A PowerShell script designed to streamline the process of downloading and installing software from a specified URL or server file path. The script supports a variety of file types, including EXE, MSI, MSIX, and ZIP files:
+
+- [AnyAppInstaller](5 AnyAppInstaller): Easily script your application for deployment.
