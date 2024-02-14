@@ -13,7 +13,7 @@
 $url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/main.zip';$moduleName='OnboardingOffboardingForm';$tempPath=Join-Path $env:TEMP ($moduleName+'.zip');Invoke-WebRequest -Uri $url -OutFile $tempPath;$tempDir='.'+$moduleName+'_temp';$extractPath=Join-Path $HOME $tempDir;Expand-Archive -Path $tempPath -DestinationPath $extractPath -Force;$rootFiles=Get-ChildItem -Path (Join-Path $extractPath 'OnboardingOffboardingForm-main') -Filter *.ps1 | Where-Object { $_.Name -ne 'CloudOnlySetup.ps1' };$onboardingFolder=Join-Path $extractPath ('OnboardingOffboardingForm-main\OnboardingScripts\*');$targetOnboardingFolder='C:\OnboardingScripts';if (!(Test-Path $targetOnboardingFolder)) {New-Item -Path $targetOnboardingFolder -ItemType Directory | Out-Null};$rootFiles | Copy-Item -Destination $targetOnboardingFolder;Copy-Item -Path $onboardingFolder -Destination $targetOnboardingFolder -Recurse -Force;Remove-Item -Path $extractPath -Recurse -Force
 ```
 
-- The script extract everything to `C:\OnboardingScript`.
+- The script extracts everything to `C:\OnboardingScript`.
 
 **Onboarding Server Setup.ps1** is a PowerShell script designed to automate the initial configuration of an Active Directory environment for new user onboarding. It performs a variety of tasks to ensure that the necessary infrastructure and accounts are in place for a smooth onboarding process.
     
@@ -83,6 +83,16 @@ $url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/
 $url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/main.zip';$moduleName='OnboardingOffboardingForm';$tempPath=Join-Path $env:TEMP ($moduleName+'.zip');Invoke-WebRequest -Uri $url -OutFile $tempPath;$tempDir='.'+$moduleName+'_temp';$extractPath=Join-Path $HOME $tempDir;Expand-Archive -Path $tempPath -DestinationPath $extractPath -Force;$rootFiles=Get-ChildItem -Path (Join-Path $extractPath 'OnboardingOffboardingForm-main') -Filter *.ps1;$targetOnboardingFolder='C:\OnboardingScripts';if (!(Test-Path $targetOnboardingFolder)) {New-Item -Path $targetOnboardingFolder -ItemType Directory | Out-Null};$rootFiles | Copy-Item -Destination $targetOnboardingFolder;Remove-Item -Path $extractPath -Recurse -Force
 ```
 
+- It will extract to `C:\OnboardingScripts`.
+
+- To download the `FlowPowerAppsMigrator`, run the following one-liner:
+
+```powershell
+$url='https://github.com/xxxmtixxx/FlowPowerAppsMigrator/archive/refs/heads/master.zip';$tempPath=Join-Path $env:TEMP 'FlowPowerAppsMigrator.zip';Invoke-WebRequest -Uri $url -OutFile $tempPath;Expand-Archive -Path $tempPath -DestinationPath 'C:\FlowPowerAppsMigrator' -Force;Remove-Item -Path $tempPath -Force
+```
+
+- It will extract to `C:\FlowPowerAppsMigrator`.
+
 #### **Run Cloud Only Scripts and Configure Environment**
 
 - **Execute**: `C:\OnboardingScripts\CloudOnlySetup.ps1`.
@@ -110,7 +120,8 @@ $url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/
 - **Update** the dropdown selections to match the `Security Group Descriptions`.
 - **Customize** SharePoint View: `All items > Format Current View > Advanced`
 - **Paste** below code: (Need to add this to the above script.)
-```
+
+```JSON
 {
   "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
   "commandBarProps": {
@@ -123,6 +134,7 @@ $url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/
   }
 }
 ```
+
 - **Verify** `Settings > List Settings > Title` is set to Not Required. (Need to add this to the above script.)
 
 ---
@@ -157,6 +169,7 @@ $url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/
     - Script will:
         - Connect to source and destination tenants.
         - Modify the ZIP files with destination tenant details.
+        - Place the modified ZIPs in `C:\FlowPowerAppsMigrator\dist`.
 
 ---
 
@@ -176,7 +189,7 @@ $url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/
 ## **Import Power Apps Form**
 - **Visit [Power Apps](https://make.powerapps.com)**
 - **Navigate** to `Apps > Import Canvas App`
-- **Select** the modified `ZIP`.
+- **Select** the modified `ZIP` from `C:\FlowPowerAppsMigrator\dist`.
 - **Click** `Import`.
 
 ## **Customize/Save/Publish the Power App Form**
@@ -200,6 +213,6 @@ $url='https://github.com/xxxmtixxx/OnboardingOffboardingForm/archive/refs/heads/
 - **Visit [Power Automate](https://make.powerautomate.com)**
 - **Navigate** to `My Flows`
 - **Click** `Import > Import Package (Legacy)`
-- **Click** `Upload` and select the modified `ZIP`.
+- **Click** `Upload` and select the modified `ZIP` from `C:\FlowPowerAppsMigrator\dist`.
 - **Select** the `connections`.
 - **Click** `Import`.
