@@ -1,0 +1,895 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/xxxmtixxx/3%20Intune%20App%20Deployment/">
+      
+      
+        <link rel="prev" href="../2%20Onboarding%20Offboarding%20Deployment/">
+      
+      
+        <link rel="next" href="../4%20Intune%20App%20Packaging/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Intune App Deployment - Onboarding - Offboarding - Intune - Assets - Reporting</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="**Intune App Deployment** - Onboarding - Offboarding - Intune - Assets - Reporting" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://github.com/xxxmtixxx/assets/images/social/3 Intune App Deployment.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://github.com/xxxmtixxx/3%20Intune%20App%20Deployment/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="**Intune App Deployment** - Onboarding - Offboarding - Intune - Assets - Reporting" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://github.com/xxxmtixxx/assets/images/social/3 Intune App Deployment.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intune-app-deployment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Onboarding - Offboarding - Intune - Assets - Reporting" class="md-header__button md-logo" aria-label="Onboarding - Offboarding - Intune - Assets - Reporting" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128v320c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64h-37.5C269.4 26.7 233.8 0 192 0m0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64M72 272a24 24 0 1 1 48 0 24 24 0 1 1-48 0m104-16h128c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16M72 368a24 24 0 1 1 48 0 24 24 0 1 1-48 0m88 0c0-8.8 7.2-16 16-16h128c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Onboarding - Offboarding - Intune - Assets - Reporting
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Intune App Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../1%20Onboarding%20Offboarding%20Submission/" class="md-tabs__link">
+        
+  
+    
+  
+  Onboarding/Offboarding Submission
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2%20Onboarding%20Offboarding%20Deployment/" class="md-tabs__link">
+        
+  
+    
+  
+  Onboarding/Offboarding Deployment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Intune App Deployment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../4%20Intune%20App%20Packaging/" class="md-tabs__link">
+        
+  
+    
+  
+  Intune App Packaging
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../5%20AnyAppInstaller/" class="md-tabs__link">
+        
+  
+    
+  
+  AnyAppInstaller
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Onboarding - Offboarding - Intune - Assets - Reporting" class="md-nav__button md-logo" aria-label="Onboarding - Offboarding - Intune - Assets - Reporting" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128v320c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64h-37.5C269.4 26.7 233.8 0 192 0m0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64M72 272a24 24 0 1 1 48 0 24 24 0 1 1-48 0m104-16h128c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16M72 368a24 24 0 1 1 48 0 24 24 0 1 1-48 0m88 0c0-8.8 7.2-16 16-16h128c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16"/></svg>
+
+    </a>
+    Onboarding - Offboarding - Intune - Assets - Reporting
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Onboarding%20Offboarding%20Submission/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Onboarding/Offboarding Submission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20Onboarding%20Offboarding%20Deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Onboarding/Offboarding Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Intune App Deployment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Intune App Deployment
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-downloadinstall" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Download/Install:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Run:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Run:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a new tenant:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-against-an-existing-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run against an existing tenant:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-against-an-all-tenants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run against an all tenants:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-application-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Application to install:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-application-to-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Application to remove:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-security-groups-in-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Security Groups in Cloud:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-script-and-create-security-groups-on-prem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate Script and Create Security Groups On-Prem:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-cintunemultitenantmanageradd-intunemultitenantps1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script: C:\IntuneMultiTenantManager\Add-IntuneMultiTenant.ps1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-cintunemultitenantmanagerremove-intunemultitenantps1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script: C:\IntuneMultiTenantManager\Remove-IntuneMultiTenant.ps1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-cintunemultitenantmanagercreate-securitygroupscloudps1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script: C:\IntuneMultiTenantManager\Create-SecurityGroupsCloud.ps1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-cintunemultitenantmanagergenerate-securitygroupsonpremps1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script: C:\IntuneMultiTenantManager\Generate-SecurityGroupsOnPrem.ps1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-cintunemultitenantmanagercreate-securitygroupsonpremps1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script: C:\IntuneMultiTenantManager\Create-SecurityGroupsOnPrem.ps1
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Intune%20App%20Packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intune App Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20AnyAppInstaller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AnyAppInstaller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="intune-app-deployment"><strong>Intune App Deployment</strong></h1>
+<p><strong>Description</strong>:
+This suite of PowerShell scripts designed to streamline the management of Microsoft Intune applications across multiple Azure AD tenants. This project simplifies complex tasks such as adding new tenants, managing application lifecycles, and handling security group configurations both in the cloud and on-premises environments.</p>
+<p>The project includes a set of tools that automate the installation of the IntuneWin32App-MultiTenant module, facilitate the addition and removal of tenant applications, and manage security groups. </p>
+<h2 id="api-downloadinstall"><strong>API Download/Install</strong>:</h2>
+<p>The module can be installed by running the following one-liner:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$documentsPath</span><span class="p">=</span><span class="no">[Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">(</span><span class="s1">&#39;MyDocuments&#39;</span><span class="p">);</span><span class="nv">$url</span><span class="p">=</span><span class="s1">&#39;https://github.com/xxxmtixxx/IntuneWin32App-MultiTenant/archive/refs/heads/main.zip&#39;</span><span class="p">;</span><span class="nv">$moduleName</span><span class="p">=</span><span class="s1">&#39;IntuneWin32App-MultiTenant&#39;</span><span class="p">;</span><span class="nv">$modulePath</span><span class="p">=</span><span class="nb">Join-Path</span> <span class="nv">$documentsPath</span> <span class="s1">&#39;WindowsPowerShell\Modules&#39;</span><span class="p">;</span><span class="nv">$tempPath</span><span class="p">=</span><span class="nb">Join-Path</span> <span class="nv">$env:TEMP</span> <span class="p">(</span><span class="nv">$moduleName</span><span class="p">+</span><span class="s1">&#39;.zip&#39;</span><span class="p">);</span><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="nv">$url</span> <span class="n">-OutFile</span> <span class="nv">$tempPath</span><span class="p">;</span><span class="nv">$tempDir</span><span class="p">=</span><span class="s1">&#39;.&#39;</span><span class="p">+</span><span class="nv">$moduleName</span><span class="p">+</span><span class="s1">&#39;_temp&#39;</span><span class="p">;</span><span class="nv">$extractPath</span><span class="p">=</span><span class="nb">Join-Path</span> <span class="nv">$HOME</span> <span class="nv">$tempDir</span><span class="p">;</span><span class="nb">Expand-Archive</span> <span class="n">-Path</span> <span class="nv">$tempPath</span> <span class="n">-DestinationPath</span> <span class="nv">$extractPath</span> <span class="n">-Force</span><span class="p">;</span><span class="nv">$sourceFolder</span><span class="p">=</span><span class="nb">Join-Path</span> <span class="nv">$extractPath</span> <span class="s1">&#39;IntuneWin32App-MultiTenant-main&#39;</span><span class="p">;</span><span class="nv">$destinationFolder</span><span class="p">=</span><span class="nb">Join-Path</span> <span class="nv">$modulePath</span> <span class="nv">$moduleName</span><span class="p">;</span><span class="nv">$managerFolder</span><span class="p">=</span><span class="nb">Join-Path</span> <span class="nv">$extractPath</span> <span class="p">(</span><span class="s1">&#39;IntuneWin32App-MultiTenant-main\IntuneMultiTenantManager&#39;</span><span class="p">);</span><span class="nv">$targetManagerFolder</span><span class="p">=</span><span class="s1">&#39;C:\IntuneMultiTenantManager&#39;</span><span class="p">;</span><span class="k">if</span> <span class="p">(!(</span><span class="nb">Test-Path</span> <span class="nv">$destinationFolder</span><span class="p">))</span> <span class="p">{</span><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="nv">$destinationFolder</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="p">|</span> <span class="nb">Out-Null</span><span class="p">};</span><span class="nb">Copy-Item</span> <span class="n">-Path</span> <span class="s2">&quot;$sourceFolder\*&quot;</span> <span class="n">-Destination</span> <span class="nv">$destinationFolder</span> <span class="n">-Recurse</span> <span class="n">-Force</span><span class="p">;</span><span class="k">if</span> <span class="p">(!(</span><span class="nb">Test-Path</span> <span class="nv">$targetManagerFolder</span><span class="p">))</span> <span class="p">{</span><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="nv">$targetManagerFolder</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="p">|</span> <span class="nb">Out-Null</span><span class="p">};</span><span class="nb">Copy-Item</span> <span class="n">-Path</span> <span class="s2">&quot;$managerFolder\*&quot;</span> <span class="n">-Destination</span> <span class="nv">$targetManagerFolder</span> <span class="n">-Recurse</span> <span class="n">-Force</span><span class="p">;</span><span class="nb">Remove-Item</span> <span class="n">-Path</span> <span class="nv">$extractPath</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
+</code></pre></div>
+<hr />
+<h2 id="how-to-run"><strong>How to Run</strong>:</h2>
+<ul>
+<li>After installation, close and reopen Windows PowerShell ISE as Admin.</li>
+<li>Run the following command to allow scripts to run:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
+</code></pre></div></li>
+<li>Browse to <code>C:\IntuneMultiTenantManager</code>.</li>
+<li>Open <code>Add-IntuneMultiTenant.ps1</code> or <code>Remove-IntuneMultiTenant.ps1</code> and click Run.</li>
+<li>Choose <code>Yes to All</code> or <code>Yes</code> when prompted.</li>
+</ul>
+<h3 id="add-a-new-tenant"><strong>Add a new tenant</strong>:</h3>
+<p>This option will create an Azure AD application, generate a self-signed certificate, configure necessary permissions through Microsoft Graph, and add the tenant to <code>credentials.csv</code>.</p>
+<ul>
+<li>Select <code>1: Add a new tenant</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_1.png?raw=true" /></p>
+<ul>
+<li>Authenticate with the tenant using a domain admin account.</li>
+<li>The <code>self-signed certificate</code> is generated.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_18.png?raw=true" /></p>
+<ul>
+<li>An <code>App Registration</code> is created in <code>Azure</code> called Microsoft Intune PowerShell.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_19.png?raw=true" /></p>
+<ul>
+<li>A link will be generated. Go to it in a browser.</li>
+<li>Click the <code>elliptical</code>, and <code>Add to configured permissions</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_2.png?raw=true" /></p>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_3.png?raw=true" /></p>
+<ul>
+<li>Click <code>Yes, add</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_4.png?raw=true" /></p>
+<ul>
+<li>Click <code>Grant admin concent for...</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_5.png?raw=true" /></p>
+<ul>
+<li>Click <code>Yes</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_6.png?raw=true" /></p>
+<ul>
+<li>Type <code>yes</code> in the powershell window and hit <code>Enter</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_13.png?raw=true" /></p>
+<ul>
+<li>The script will exit after this.</li>
+</ul>
+<hr />
+<h3 id="run-against-an-existing-tenant"><strong>Run against an existing tenant</strong>:</h3>
+<p>This option will allow you to select an existing tenant in the <code>credentials.csv</code>.</p>
+<ul>
+<li>Select <code>2: Run against an existing tenant</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_7.png?raw=true" /></p>
+<ul>
+<li>Select the tenant to run against.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_8.png?raw=true" /></p>
+<hr />
+<h3 id="run-against-an-all-tenants"><strong>Run against an all tenants</strong>:</h3>
+<p>This option will allow you to select all existing tenants in the <code>credentials.csv</code>.</p>
+<ul>
+<li>Select <code>3: Run against all</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_9.png?raw=true" /></p>
+<hr />
+<h3 id="select-application-to-install"><strong>Select Application to install</strong>:</h3>
+<p>This option will allow you to select one or all applications to install in <code>applications.csv</code> and run agains the tenant(s) you selected.</p>
+<p>The Security Groups <strong>MUST</strong> already exist in the tenant before the application will install.</p>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_10.png?raw=true" /></p>
+<p>A Final Report is created after everything finishes. Here you can see a few outcomes.</p>
+<ul>
+<li>7-Zip does not exit in Intune, so it was added.</li>
+<li>A Security Group does not exist for Adobe Acrobat.</li>
+<li>The rest of the apps already exist in Intune.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_11.png?raw=true" /></p>
+<hr />
+<h3 id="select-application-to-remove"><strong>Select Application to remove</strong>:</h3>
+<p>This option will allow you to select one application to remove in <code>applications.csv</code> and run agains the tenant(s) you selected.</p>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_12.png?raw=true" /></p>
+<p>A Final Report is created after it finishes.</p>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_14.png?raw=true" /></p>
+<hr />
+<h3 id="create-security-groups-in-cloud"><strong>Create Security Groups in Cloud</strong>:</h3>
+<p>This option will allow you to create the security groups defined in <code>applications.csv</code> in the tenant you selected.</p>
+<ul>
+<li>Browse to <code>C:\IntuneMultiTenantManager</code>.</li>
+<li>Open <code>Create-SecurityGroupsCloud.ps1</code>.</li>
+</ul>
+<p>A Final Report is created after it finishes.</p>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_15.png?raw=true" /></p>
+<hr />
+<h3 id="generate-script-and-create-security-groups-on-prem"><strong>Generate Script and Create Security Groups On-Prem</strong>:</h3>
+<p>This option will allow you to generate the script required to create the security groups defined in <code>applications.csv</code> in the on-prem AD server.</p>
+<ul>
+<li>Browse to <code>C:\IntuneMultiTenantManager</code>.</li>
+<li>Open <code>Generate-SecurityGroupsOnPrem.ps1</code>.</li>
+</ul>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_16.png?raw=true" /></p>
+<ul>
+<li>Copy <code>Generate-SecurityGroupsOnPrem.ps1</code> to the on-prem AD server and run it.</li>
+</ul>
+<p>A Final Report is created after it finishes.</p>
+<p><img alt="alt text" src="../assets/Intune_App_Deploy_17.png?raw=true" /></p>
+<h2 id="script-cintunemultitenantmanageradd-intunemultitenantps1"><strong>Script</strong>: <code>C:\IntuneMultiTenantManager\Add-IntuneMultiTenant.ps1</code></h2>
+<p>This PowerShell script is designed to facilitate the management of Microsoft Intune applications across multiple tenants. It automates tasks such as the addition of new tenants, executing operations on existing tenants, and handling application installations. The script features a user-friendly interface to guide administrators through various options, including adding a new tenant, running actions on a specific tenant, or applying operations across all tenants.</p>
+<div class="highlight"><pre><span></span><code>- Initialization of variables and preparation of the environment, including defining paths for storing applications and credentials.
+- Installation of necessary PowerShell modules for Azure AD, Microsoft Graph, and Intune application management.
+- Dynamic downloading and importing of a custom module for Intune Win32 application management across multiple tenants.
+- A user interaction section to capture the administrator&#39;s intent, whether it&#39;s to add a new tenant, operate on an existing one, or execute actions across all tenants.
+- For new tenants, the script supports the creation of an Azure AD application, generating a self-signed certificate, and configuring necessary permissions through Microsoft Graph for comprehensive application management.
+- For existing tenants, it enables the selection of a specific tenant or all tenants and processes applications based on pre-defined criteria in CSV files.
+- Comprehensive error handling and validation checks to ensure smooth script execution and user decisions.
+- Final report generation that summarizes the operations performed and their outcomes.
+</code></pre></div>
+<hr />
+<h2 id="script-cintunemultitenantmanagerremove-intunemultitenantps1"><strong>Script</strong>: <code>C:\IntuneMultiTenantManager\Remove-IntuneMultiTenant.ps1</code></h2>
+<p><strong>Description</strong>:
+This PowerShell script is crafted to streamline the management of Win32 applications within Microsoft Intune across multiple tenants. It's specifically designed to handle the removal of applications, in addition to facilitating the addition of new tenants and the management of existing ones. Through a user-friendly command-line interface, the script provides administrators with options to add a new tenant, work with a specified existing tenant, or apply actions across all tenants, focusing on application removal.</p>
+<div class="highlight"><pre><span></span><code>- Configuration of essential paths and the importation of necessary PowerShell modules for interacting with Azure AD, Microsoft Graph Authentication, and Intune application management capabilities.
+- A streamlined process for adding new tenants that includes creating an Azure AD application, generating a self-signed certificate, and configuring required permissions via Microsoft Graph to enable comprehensive application management within the new tenant.
+- An interactive user interface that guides administrators through selecting a tenant and choosing applications for removal, based on listings in a CSV file. This ensures that application portfolios can be accurately managed and updated across multiple tenants.
+- Enhanced security measures, including certificate-based authentication for Azure AD, to ensure secure access and management operations.
+- Detailed procedures for removing specified Win32 applications from the selected tenant(s), leveraging the script’s ability to authenticate and execute removal commands securely.
+- Final report generation that summarizes the operations performed and their outcomes.
+</code></pre></div>
+<hr />
+<p><strong>Note:</strong> Both scripts above require the <code>credentials.csv</code> and <code>applications.csv</code> files for their operations, as they rely on this data to manage applications across multiple tenants. Ensure these CSV files are up-to-date and located in the specified paths (<code>Requirements\credentials.csv</code> and <code>Requirements\applications.csv</code>) relative to the script's root directory. Additionally, the scripts are part of a larger PowerShell module, <code>IntuneWin32App-MultiTenant</code>, which contains various functions that these scripts utilize for managing Intune applications across multiple tenants.</p>
+<hr />
+<h2 id="script-cintunemultitenantmanagercreate-securitygroupscloudps1"><strong>Script</strong>: <code>C:\IntuneMultiTenantManager\Create-SecurityGroupsCloud.ps1</code></h2>
+<p><strong>Description</strong>:
+This script will allow for the creation of <code>Security Groups</code> in the <code>Cloud</code> with the Security Group Name and Descriptions found in <code>Requirements\applications.csv</code>. </p>
+<hr />
+<h2 id="script-cintunemultitenantmanagergenerate-securitygroupsonpremps1"><strong>Script</strong>: <code>C:\IntuneMultiTenantManager\Generate-SecurityGroupsOnPrem.ps1</code></h2>
+<p><strong>Description</strong>:
+This script will generate <code>Create-SecurityGroupsOnPrem.ps1</code> with the Security Group Name and Descriptions found in <code>Requirements\applications.csv</code>.</p>
+<h2 id="script-cintunemultitenantmanagercreate-securitygroupsonpremps1"><strong>Script</strong>: <code>C:\IntuneMultiTenantManager\Create-SecurityGroupsOnPrem.ps1</code></h2>
+<p><strong>Description</strong>:
+This script will allow for the createion of <code>Security Groups</code> in the <code>On-Prem</code> environment after being generated with <code>Generate-SecurityGroupsOnPrem.ps1</code>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/xxxmtixxx"  target="_blank" rel="noopener">xxxMTIxxx</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/xxxmtixxx" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.tiktok.com/@uh.whycanti" target="_blank" rel="noopener" title="www.tiktok.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121 121 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/paulclemons/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>
